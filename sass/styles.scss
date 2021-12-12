@@ -1,0 +1,118 @@
+@import "./header.scss";
+@import "./hero.scss";
+@import "./menu.scss";
+@import "./header.scss";
+@import "./why.scss";
+@import "./latestArticles.scss";
+@import "./footer.scss";
+
+:root {
+  --Dark-Blue: hsl(233, 26%, 24%);
+  --Lime-Green: hsl(136, 65%, 51%);
+  --Bright-Cyan: hsl(192, 70%, 51%);
+  --Grayish-Blue: hsl(233, 8%, 62%);
+  --Light-Grayish-Blue: hsl(220, 16%, 96%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+  font-size: 16px;
+  --wrapper-space: 1.5em;
+}
+
+html{
+  // overflow: hidden;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  margin: 0;
+  color: var(--Grayish-Blue);
+}
+
+.wrapper {
+  padding: 0 var(--wrapper-space);
+  max-width: calc(1115px + 1.5em);
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@mixin title {
+  font-size: 2.5em;
+  color: var(--Dark-Blue);
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.title {
+  &-h1 {
+    @include title;
+    // font-size: 2.5em;
+    // color: var(--Dark-Blue);
+    // font-weight: 400;
+    // line-height: 1.3;
+    // margin: 0;
+    // margin-bottom: 0.5em;
+  }
+  &-h2 {
+    @include title;
+    font-size: 1.5em;
+  }
+  &-h3 {
+    @include title;
+    font-size: 1em;
+  }
+}
+
+.copy {
+  line-height: 1.7;
+  font-size: 0.9em;
+}
+
+.button {
+  border: none;
+  padding: 0.9em 2.2em;
+  font-size: 1em;
+  background-image: linear-gradient(
+    to right,
+    var(--Lime-Green) 0%,
+    var(--Bright-Cyan) 100%
+  );
+  color: var(--White);
+  border-radius: 1.5em;
+}
+
+@mixin icon {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  background-repeat: no-repeat;
+}
+
+.icon{
+  &-facebook{
+    @include icon;
+    background-image: url('../images/icon-facebook.svg');
+  }
+  &-youtube{
+    @include icon;
+    background-image: url('../images/icon-youtube.svg');
+  }
+  &-twitter{
+    @include icon;
+    background-image: url('../images/icon-twitter.svg');
+  }
+  &-pinterest{
+    @include icon;
+    background-image: url('../images/icon-pinterest.svg');
+  }
+  &-instagram{
+    @include icon;
+    background-image: url('../images/icon-instagram.svg');
+  }
+}

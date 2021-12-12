@@ -1,0 +1,63 @@
+.menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &-button{
+        width: 40px;
+        height: 40px;
+        background: url('../images/icon-hamburger.svg') no-repeat center;
+    }
+    a{
+        text-decoration: none;
+        color: var(--Grayish-Blue);
+        padding: 0 .8em;
+    }
+    &-item{
+        display: flex;
+        align-items: center;
+    }
+    &-checkbox{
+        display: none;
+        &:checked{
+            & ~ .menu-button{
+                background: url("../images/icon-close.svg") no-repeat center ;
+            }
+            & ~ .menu{
+                display: block;
+                position: absolute;
+                top: 100%;
+                padding: 1em;
+                left: 0;
+                right: 0;
+                height: 100vh;
+                background: linear-gradient(to bottom, var(--Dark-Blue) 0%, transparent 90%);
+                .menu-item{
+                    &:first-child a{
+                        padding-top: 2em;
+                        border-radius: .5em .5em 0 0;
+                    }
+                    &:last-child a{
+                        padding-bottom: 2em;
+                        border-radius: 0 0 .5em .5em;
+                    }
+                }
+                a{
+                    background: var(--White);
+                    padding: .8em 1em;
+                    color: var(--Dark-Blue);
+                    font-size: 1.1em;
+                    display: block;
+                    text-align: center;
+                    flex: 1;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        &-button{
+            display: none;
+        }
+    }
+}

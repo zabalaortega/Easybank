@@ -1,0 +1,56 @@
+.latestArticles {
+  padding: 5em 0;
+  background: var(--Very-Light-Gray);
+  .title-h1 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  &-grid {
+    display: grid;
+    grid-row-gap: 2em;
+  }
+  &-item {
+    border-radius: 0.5em;
+    overflow: hidden;
+    background: var(--White);
+    &-content {
+      padding: 1.8em;
+    }
+    .copy {
+      color: var(--Grayish-Blue);
+    }
+    small {
+      color: var(--Grayish-Blue);
+      margin-bottom: 1em;
+      display: block;
+    }
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media screen and (min-width: 768px) {
+    .title-h1{
+      text-align: left;
+    }
+    &-item {
+      &-content {
+        padding: 1em;
+      }
+    }
+    &-grid {
+      display: grid;
+      grid-column-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

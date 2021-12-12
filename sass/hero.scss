@@ -1,0 +1,71 @@
+.hero {
+  text-align: center;
+  padding-bottom: 5em;
+  background: var(--Light-Grayish-Blue);
+  .copy {
+    margin-bottom: 2.5em;
+  }
+  &-image {
+    height: 300px;
+    margin: 0 calc(-1 * var(--wrapper-space));
+    background: url("../images/image-mockups.png") center bottom no-repeat,
+      url("../images/bg-intro-mobile.svg") center no-repeat;
+    background-size: 345px, cover;
+    margin-bottom: 1.2em;
+  }
+  &-imageSrc{
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+    background: url("../images/bg-intro-desktop.svg") left 400px top -270px no-repeat;
+    background-size: cover;
+    min-height: 550px;
+    box-sizing: border-box;
+    &-content {
+      position: relative;
+      display: grid;
+      align-items: center;
+      min-height: 550px;
+      grid-template-areas: "description image";
+      grid-template-columns: 300px 1fr;
+      
+    }
+    &-description {
+      // border: 1px solid green;
+    }
+    &-image {
+      grid-area: image;
+      min-height: inherit;
+      position: absolute;
+      width: 500px;
+      left: 0;
+      top: 0;
+      height: 768px;
+      background: url("../images/image-mockups.png") left  bottom no-repeat;
+      background-size: cover;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    // background: url("../images/bg-intro-desktop.svg") left 650px top -290px no-repeat;
+    &-content{
+
+    }
+    &-imageSrc{
+      display: block;
+      position: relative;
+      top: -160px;
+    }
+    &-image{
+      // background: url("../images/image-mockups.png") right -100px bottom 0 no-repeat;
+      // background-size: 100%;
+      background: none;
+      left: 170px;
+      right: 0;
+      top: 0;
+
+    }
+  }
+}
